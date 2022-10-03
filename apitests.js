@@ -1,6 +1,11 @@
 // Example API Method:
 function robAPI(link) {
-    fetch(link)
+    fetch(link, { // Handle CORS Request
+        mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin':'*'
+        }
+    })
     .then(
     // HTTP GET Request: 
     function(response) {
@@ -16,7 +21,7 @@ function robAPI(link) {
         console.log(data); // Use console to check data object contents
 
         // Popup Notification:
-        tata.log("Cat Fact:", data.fact,{
+        tata.log("Testing:", data,{
             position: 'tm',
           });
         });
