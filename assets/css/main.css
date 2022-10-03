@@ -1,10 +1,19 @@
 @import url(fontawesome-all.min.css);
 
-/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+  /* Import fonts */
+  @font-face {
+    font-family: HK Grotesk;
+    src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+      format("opentype");
+  }
+  @font-face {
+    font-family: HK Grotesk;
+    font-weight: bold;
+    src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+      format("opentype");
+  }
+
+
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -29,7 +38,23 @@ footer, header, hgroup, menu, nav, section {
 	display: block;}
 
 body {
+	font-family: HK Grotesk, Arial, Helvetica, sans-serif;
 	line-height: 1;
+}
+
+.canvas_for_three {
+	position:absolute;
+	border: 1px solid white;
+	left: 60%;
+	top: 30%;
+	z-index: -1;
+}
+
+canvas {
+	display: flex;
+	position: relative;
+    width: 20vw !important;
+    height: 20vw !important;
 }
 
 ol, ul {
@@ -116,7 +141,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: rgba(0, 0, 0, 0.55);
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: HK Grotesk, Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
 		line-height: 1.75;
@@ -2996,7 +3021,6 @@ input, select, textarea {
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
-		min-height: 22.5em;
 	}
 
 		body.is-ie .spotlights > section {
@@ -3022,7 +3046,7 @@ input, select, textarea {
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(49, 36, 80, 0.9);
+				background: rgba(0, 0, 0, 0.9);
 				content: '';
 				display: block;
 				height: 100%;
@@ -3068,6 +3092,10 @@ input, select, textarea {
 		}
 
 		.spotlights > section:nth-child(3) {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+
+		.spotlights > section:nth-child(4) {
 			background-color: rgba(0, 0, 0, 0.1);
 		}
 
@@ -3525,7 +3553,7 @@ input, select, textarea {
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: white;
+		background: black;
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3738,7 +3766,7 @@ input, select, textarea {
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: rgba(0, 0, 255, 0.35);
+			color: rgba(255, 255, 255, 0.35);
 			display: block;
 			font-size: 0.6em;
 			font-weight: bold;
@@ -3778,11 +3806,11 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:hover {
-				color: rgba(0, 0, 0, 0.55);
+				color: rgba(255, 255, 255, 0.55);
 			}
 
 			#sidebar nav a.active {
-				color: black;
+				color: white;
 			}
 
 				#sidebar nav a.active:after {

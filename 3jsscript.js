@@ -1,4 +1,3 @@
-
 var camera, scene, renderer;
 var image;
 
@@ -6,11 +5,11 @@ init();
 animate();
 
 function init() {
-
-  renderer = new THREE.WebGLRenderer( {alpha: true});
+  renderer = new THREE.WebGLRenderer( { alpha: true});
 	renderer.setSize(window.innerWidth/2, window.innerWidth/2); //handle pixel density stuff (currently being set in CSS
-   renderer.setPixelRatio(2);
-	document.body.appendChild( renderer.domElement );
+  renderer.setPixelRatio( window.devicePixelRatio );
+  var canvas = document.getElementById('ctx');
+	canvas.appendChild( renderer.domElement );
 
 	scene = new THREE.Scene();
   camera = new THREE.OrthographicCamera( -10, 10, 10,  -10, - 10, 10); 
@@ -22,7 +21,7 @@ function init() {
 	var material = new THREE.MeshBasicMaterial( {
 		map: texture
 	} );
-  
+
   	var material2 = new THREE.MeshBasicMaterial( {
 		map: texture2
 	} );
@@ -70,16 +69,16 @@ $( "old" ).on( "mousemove", function() {
 
         e.preventDefault();
 
-        var touchstart = e.type === 'touchstart' || e.type === 'touchmove',
+        var touchstart = e.type === 'touchstart' || e.type === 'touchmove',
             e = touchstart ? e.originalEvent : e,
             pageX = touchstart ? e.targetTouches[0].pageX : e.pageX,
             pageY = touchstart ? e.targetTouches[0].pageY : e.pageY;
 
-     
+
     pos = (((360*(event.pageX - window.innerWidth/2)/window.innerWidth)* Math.PI / 180)/2) - Math.PI/2;
-  
+
    pos2 = ((360*(event.pageY - window.innerHeight/8)/window.innerHeight)* Math.PI / 180) - Math.PI/2;
-     
+
    mesh2.rotation.y=-pos - Math.PI;
     mesh.rotation.y=pos;
 
