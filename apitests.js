@@ -1,5 +1,6 @@
 // Example API Method:
 function robAPI(link) {
+    document.getElementById("spinner").style.display = "flex";
     fetch(link, { // Handle CORS Request
         mode: 'cors',
         headers: {
@@ -9,6 +10,7 @@ function robAPI(link) {
     .then(
     // HTTP GET Request: 
     function(response) {
+        document.getElementById("spinner").style.display = "none";
         // Error handling
         if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
@@ -19,7 +21,6 @@ function robAPI(link) {
         // Examine the text in the response
         response.json().then(function(data) {
         console.log(data); // Use console to check data object contents
-
         // Popup Notification:
         tata.log("Testing:", data,{
             position: 'tm',
@@ -34,10 +35,12 @@ function robAPI(link) {
 }
 
 function ryanAPI(link) {
+    document.getElementById("spinner").style.display = "flex";
     fetch(link)
     .then(
     // HTTP GET Request: 
     function(response) {
+        document.getElementById("spinner").style.display = "none";
         // Error handling
         if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
@@ -63,10 +66,12 @@ function ryanAPI(link) {
 }
 
 function aaronAPI(link) {
+    document.getElementById("spinner").style.display = "flex";
     fetch(link)
     .then(
     // HTTP GET Request: 
     function(response) {
+        document.getElementById("spinner").style.display = "none";
         // Error handling
         if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
@@ -92,10 +97,12 @@ function aaronAPI(link) {
 }
 
 function theoAPI(link) {
+    document.getElementById("spinner").style.display = "flex";
     fetch(link)
     .then(
     // HTTP GET Request: 
     function(response) {
+        document.getElementById("spinner").style.display = "none";
         // Error handling
         if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
